@@ -24,3 +24,123 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.temple-reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  animation: templeReveal 1.8s ease-out forwards;
+}
+
+.content-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: contentReveal 1.5s ease-out 0.55s forwards;
+}
+
+.fog {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(55px);
+  opacity: 0.22;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(210, 198, 255, 0.14) 35%,
+    rgba(139, 92, 246, 0.08) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.fog-1 {
+  width: 34rem;
+  height: 10rem;
+  left: -8%;
+  top: 18%;
+  animation: fogLeft 24s ease-in-out infinite alternate;
+}
+
+.fog-2 {
+  width: 42rem;
+  height: 12rem;
+  right: -12%;
+  top: 26%;
+  animation: fogRight 28s ease-in-out infinite alternate;
+}
+
+.fog-3 {
+  width: 52rem;
+  height: 13rem;
+  left: 50%;
+  top: 55%;
+  transform: translateX(-50%);
+  animation: fogCenter 22s ease-in-out infinite alternate;
+}
+
+.fog-4 {
+  width: 28rem;
+  height: 9rem;
+  left: 8%;
+  bottom: 12%;
+  animation: fogLeft 30s ease-in-out infinite alternate-reverse;
+}
+
+.fog-5 {
+  width: 30rem;
+  height: 9rem;
+  right: 6%;
+  bottom: 10%;
+  animation: fogRight 26s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes templeReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.98);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes contentReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes fogLeft {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(8%, 2%, 0) scale(1.08);
+  }
+}
+
+@keyframes fogRight {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-8%, 3%, 0) scale(1.1);
+  }
+}
+
+@keyframes fogCenter {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) translateY(2%) scale(1.08);
+  }
+}
