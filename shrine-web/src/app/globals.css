@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 @theme inline {
@@ -142,5 +144,22 @@ body {
   }
   100% {
     transform: translateX(-50%) translateY(2%) scale(1.08);
+  }
+}
+
+.incense-blessing-reveal {
+  animation: incenseBlessingReveal 1.35s ease-out forwards;
+}
+
+@keyframes incenseBlessingReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
