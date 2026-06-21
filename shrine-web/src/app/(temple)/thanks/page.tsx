@@ -13,7 +13,7 @@ function getSessionId() {
     return stored;
   }
 
-  const next = `sess_${crypto.randomUUID()}`;
+  const next = `sess_${Date.now()}_${Math.random().toString(36).slice(2)}`;
   window.localStorage.setItem("ai-shrine-session", next);
   return next;
 }
